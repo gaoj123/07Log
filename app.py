@@ -15,6 +15,13 @@ def response():
     methodType=request.method
     return render_template("response.html", name=username,method=methodType)
 
+def validate(username, password):
+    if username == "DW":
+        if password == "kittens":
+            return 0 #everything correct
+        return 1 #wrong password
+    return 2 # wrong username
+
 if __name__=="__main__":
     app.debug=True
     app.run()
