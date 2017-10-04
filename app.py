@@ -12,8 +12,15 @@ def response():
     print request.headers
     print request.form
     username=request.form["Name"]
-    methodType=request.method
-    return render_template("response.html", name=username,method=methodType)
+    password=request.form["Password"]
+    status=validate(username,password)
+    if status==0:
+        return render_template("response.html", name=username,message=correct)
+    elif status==1:
+        return render_template("form.html",message=wrongPassword)
+    else:
+        return render_template("form.html",message=wrongUsername)
+    
 
 def validate(username, password):
     if username == "DW":
