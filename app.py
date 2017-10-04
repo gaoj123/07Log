@@ -15,11 +15,11 @@ def response():
     password=request.form["Password"]
     status=validate(username,password)
     if status==0:
-        return render_template("response.html", name=username,message=correct)
+        return render_template("response.html", name=username)
     elif status==1:
-        return render_template("form.html",message=wrongPassword)
+        return render_template("form.html",message="Wrong Password")
     else:
-        return render_template("form.html",message=wrongUsername)
+        return render_template("form.html",message="Wrong Username")
     
 
 def validate(username, password):
