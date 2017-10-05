@@ -4,12 +4,13 @@
     <title>Form</title>
   </head>
   <body>
-    <h3>{{message}}</h3> <!--shows error message if incorrect username/password entered-->
+    <h3 style="color: red;">{{message}}</h3> <!--shows error message if incorrect username/password entered-->
     <h1>Login</h1>
     <form method="POST" action="/response">
       Username: <input type="text" name="Name"><br>
-      Password: <input type="text" name="Password"><br>
+      Password: <input type="password" name="Password"><br>
       <input type="submit" value="Submit">
+    </form>
   </body>
-  </html> 
+</html> 
   
