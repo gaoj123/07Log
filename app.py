@@ -18,8 +18,8 @@ def response():
     username=request.form["Name"]
     password=request.form["Password"]
     status=validate(username,password) ##Checks if username and password are correct
-    if status==0:
-        session['Name']=username
+    if status == 0:
+        session['Name'] = username
         print "Session: "+session['Name']
         return render_template("response.html", name=username, message="WELCOME!") #username and password are correct, so shows Welcome page
     elif status==1:
@@ -29,7 +29,7 @@ def response():
     
 
 def validate(username, password):
-    if username == "DW": ##correct username
+    if username == "DW": #correct username
         if password == "kittens": ##correct password
             return 0 #everything correct
         return 1 #wrong password
